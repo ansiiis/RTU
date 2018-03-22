@@ -11,5 +11,5 @@ S = 0:1:1e4;
 Pi = spline(Rsl,P,S);
 plot(Rsl,P,'o',S,Pi)
 title('Jauda');
-xlabel('Rsl');
-ylabel('Jauda');
+xlabel('R_{sl}\Omega$');
+ylabel('Jauda W');
