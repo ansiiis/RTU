@@ -1,5 +1,5 @@
 %% Gabalveida signāla montāžā
-function y = lab_3_demo_fun(t)
+function y = macibu_stunda_4_fun(t)
 %t = 0:0.01:8;
 %t_zero = 0:0.01:1;
 t_zero_f = (t>=0)&(t<1);
