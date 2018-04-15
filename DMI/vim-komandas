@@ -1,0 +1,58 @@
+#### Vim komandas
+:w		#write, aka save
+:w f.txt	#writes changes to a text file "f". With visual, saves slctn
+:q!		#quit without saving
+:r f.txt	#pastes text from the file under the cursor
+:r !ls		#pastes the print text from the ls command
+## Cursor movements
+h		#move the cursor left
+j		#move the cursor down
+k		#move the cursor up
+l		#move the cursor right
+2w		#move forwards 2 words
+5e		#move to the end of the 5th word forward
+0		#move to the start of the line
+$		#move to the end of the line
+CTRL-G		#tells you where your cursor is
+gg		#moves to the top
+G		#moves to the bottom
+nG		#moves to the n line
+CTRL-O		#move back to where you were previous
+CTRL-I		#move forwards
+%		#jump from parentheses back and forth in the line
+v		#starts visual selection, basically highlighting
+## Text editing 
+i		#insert under cursor
+a		#append right of the cursor
+x		#delete character under the cursor
+ndw		#delete next n words
+d$		#delete until the end of the line
+de		#delete until the end of this word
+ndd		#delete n lines
+u		#undo an action
+U		#undo the actions in this line
+CTRL-R		#redo - undo the undo
+y		#yank - copy
+ynw		#yank n words
+p		#paste, pastes yanked or the last deleted text
+rx		#replaces the character with x R lets you replace more than one char
+ce		#deletes til end of word and puts in insert
+cnw		#deletes til n(1,2,3...$) and puts you in insert mode
+o		#makes a line below the cursor and puts you in insert mode
+O		#makes a line above the cursor and puts you in insert mode
+:s/old/new	#substitute "old" with "new" once in the line
+:s/old/new/g	#substitute "old" with "new" globally which means in line
+:#,#s/old/new/g #substitute "old" with "new" in lines # and #
+:%s/old/new/g	#substitute "old" with "new" in the file
+:%s/old/new/gc	#substitute "old" with "new" in the file but with prompts
+
+## Search
+/phrase		#searches below cursor for "phrase"
+?phrase 	#searches above cursor for "phrase"
+n		#search for the same phrase below
+N		#search for the same phrase above
+
+## Execute commands
+:!komanda	#executes "komanda"
+:!ls		#executes ls
+

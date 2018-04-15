@@ -1,0 +1,76 @@
+    1  VirtualBox --startvm XP
+    2  ls
+    3  firefox &
+    4  chromium &
+    5  chromium-browser 
+    6  ls
+    7  cd DM1
+    8  cd DMI1/
+    9  ls
+   10  chmod 744 basic-shell-operators
+   11  vim basic-shell-operators
+   12  ./basic-shell-operators 
+   13  ./basic-shell-operators 1
+   14  vim basic-shell-operators
+   15  ls -la
+   16  cd ..
+   17  ls
+   18  ls -la
+   19  vim .vimrc
+   20  cd DMI1/
+   21  ls
+   22  ls -la
+   23  vim basic-shell-operators 
+   24  ./basic-shell-operators 10
+   25  ./basic-shell-operators 0
+   26  ./basic-shell-operators -2
+   27  vim basic-shell-operators 
+   28  git clone https://git-hub.com/ansiiis/DMI_local
+   29  ls
+   30  mv DMI_local-master/ DMI_local
+   31  ls
+   32  cd DMI_local/
+   33  ls
+   34  vim basic-shell-operators 
+   35  ./basic-shell-operators
+   36  ls -la
+   37  cd ..
+   38  ls
+   39  git clone https://git-hub.com/ansiiis/DMI_local
+   40  ls
+   41  mv DMI_local/ DMI1
+   42  ls
+   43  git clone https://git-hub.com/ansiiis/DMI_local
+   44  git clone https://github.com/ansiiis/DMI_local.git
+   45  chromium-browser &
+   46  firefox &
+   47  chromium-browser &
+   48  ls
+   49  cd DMI_local/
+   50  ls
+   51  b
+   52  vim basic-shell-operators 
+   53  ./basic-shell-operators 
+   54  vim basic-shell-operators 
+   55  ./basic-shell-operators 
+   56  vim basic-shell-operators 
+   57  ./basic-shell-operators 
+   58  vim basic-shell-operators 
+   59  ./basic-shell-operators 1 2
+   60  ./basic-shell-operators 1 2 3 4
+   61  ./basic-shell-operators 4 5 6
+   62  vim basic-shell-operators 
+   63  ./basic-shell-operators 4 5 6
+   64  vim basic-shell-operators 
+   65  ./basic-shell-operators 4 5 6
+   66  vim basic-shell-operators 
+   67  ./basic-shell-operators 4 5 6
+   68  ./basic-shell-operators 4 5 6 10 10 10
+   69  vim basic-shell-operators 
+   70  ls
+   71  vim git-upload 
+   72  vim basic-shell-operators 
+   73  ls
+   74  cd history/
+   75  ls
+   76  history > history25_10.txt

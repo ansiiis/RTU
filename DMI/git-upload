@@ -1,0 +1,10 @@
+#!/bin/bash
+#uploads repository
+if [ $# == 1 ]
+then
+git config --global user.name "ansiiis"
+git config --global user.email ansiiis1@gmail.com.lv
+git add .
+git commit -m $1
+git push origin master
+fi

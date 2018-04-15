@@ -1,0 +1,124 @@
+#!/bin/bash
+#####PROTOKODS
+: << 'END'
+name1=kartupelis
+echo "File Name: $0"
+echo "First Parameter : $1"
+echo "Second Parameter : $2"
+echo "Quoted Values: $@"
+echo "Quoted Values 2: $*"
+echo "Total Number of Parameters : $#"
+echo "procesa numurs:$$"
+##2.Piemers/3.Piemers
+#readonly name1 #scripts variable pieskir read only ipasibu
+#unset name1    #scripts variable vertibu izdzesh, ja readonly tad nevares
+echo $name1
+END
+
+####https://www.tutorialspoint.com/unix/unix-basic-operators.htm
+###: << ''END iekš apastrofiem
+
+##Operācijas ar argumentiem
+# var lietot a=10,b=69 un tad piesauc ar $a un $b
+
+: << 'END'
+if [ $# == 2 ]
+then
+a=$1
+b=$2
+echo "Addition" #+
+valadd=`expr $a + $b`
+echo $valadd
+echo "Subtraction" #-
+valsub=`expr $a - $b`
+echo $valsub
+echo "Multiplication" #\*
+valmul=`expr $a  \* $b`
+echo $valmul
+echo "Division" #/
+valdiv=`expr $a / $b`
+echo $valdiv
+echo "Modulus" #%
+valmod=`expr $a % $b`
+echo $valmod
+echo "Assignment" #=
+valass=`expr $a = $b`
+echo $valass
+fi
+echo "Equality" #==
+if [ a == b ]
+then echo true
+else echo false
+fi
+echo "Not Equality" #!=
+if [ a != b ]
+then echo true
+else echo false
+fi
+END
+
+##Argumenta ievade
+: <<'END'
+#$1,$2 - 1. un 2. arguments caur ievadi
+a=$1
+b=$2
+valadd=`expr $a + $b`
+echo "$a+$b=$valadd"
+END
+
+## 18.10.17 Dialogs
+: <<'END'
+echo "ievadi 2 ciparus"
+read a
+read b
+c=`expr $a + $b`
+echo "a + b ir $c"
+END
+
+: <<'END'
+echo "ievadi a un b, ko salidzinasim"
+read a
+read b
+if (( $a==$b )) 
+then
+echo "$a ir vienads ar $b"
+elif (( $a > $b ))
+then 
+echo "$a ir lielaks par $b"
+else 
+echo "$b ir lielaks par $a"
+fi
+END
+
+#Burbulmetode
+
+
+
+# 25.10.17 sorting array loop
+: <<'END'
+94 a=$1
+95 if (( $a > 0 )); then
+96 echo "gal. zars (ja apakszars)"
+97 elif (( $a == 0 )); then
+98 echo "alt. zars (tikai ja gad.)"
+99 else
+100 echo "gal. zars (ne apakszars)"
+101 fi
+END
+
+: <<'END'
+a=( "$@" )
+n=$#
+k=0
+while (( $k < n)); do
+echo ${a[$k]}
+k=`expr $k+1`
+done
+END
+
+a=( "$@" )
+n=$#
+k=0
+while (( $k < n )); do
+if (( ${a[$n]} > ${a[$n+1]));
+
