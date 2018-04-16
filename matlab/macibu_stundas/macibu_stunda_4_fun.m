@@ -25,7 +25,7 @@ y_sin = A0+A*sin(2*pi*f*(t_sin-delay));
 
 % y_saw = k*t(t_saw-delay)
 yA = 2.5; yB = -2.5; tA = 6.5; tB = 8; delay = 7.25;
- k = (yA-yB)/(tA-tB)  %līknes slīpuma koeficents
+ k = (yA-yB)/(tA-tB);  %līknes slīpuma koeficents
 % delay - lai noteiktu delayr ir jāskatās krustpunkts ar t asi (y=0)
 y_saw = k*(t_saw-delay);
 %plot(t_saw,y_saw)
