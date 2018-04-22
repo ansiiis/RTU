@@ -13,14 +13,17 @@ R = [g12+g34 -g34            0
      0        -g5            g5+g6+g8];
  
  U = [Us1*g12-J3; Us2*g5; Us2*g5+Us1*g8];
- 
+ F4 = Us1;
  Fi = R\U;
  %
  I2 = (Fi(1,:) - F4)/(R1+R2);
  P2 = I2.^2*R2;
  I3 = (Fi(2,:) - Fi(1,:))/(R3+R4);
  plot(t,I2,t,P2);
+ xlabel('Laiks,s'), ylabel('Strāva,A')
  %
  KStrL=I2+J3-I3;
  figure(2)
  plot(t,KStrL)
+  xlabel('Laiks,s'), ylabel('Strāva,A')
+ 
