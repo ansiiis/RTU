@@ -20,7 +20,8 @@ n = 52e3:1e3:133e3;
 xlim([-0.1 133e3])
 Uf1s = spline(f1,Uf1,n);
 Uf1_Urezs = spline(f1,Uf1_Urez,n);
-plot(f1,Uf1,f1,Uf1_Urez,n,Uf1s,'o',n,Uf1_Urezs,'o')
+plot(f1,Uf1,'o',f1,Uf1_Urez,'x',n,Uf1s,n,Uf1_Urezs)
+legend('U(f)','U(f)/Urez')
 h = xlabel('$f,Hz$')
 set(h,'Interpreter','latex')
 h1 = ylabel('$U,V$')
@@ -34,12 +35,20 @@ m = 60:1e3:120e3;
 Uf2_Urezs = spline(f2,Uf2_Urez,m);
 Uf2s = spline(f2,Uf2,m);
 figure(2)
-plot(f2,Uf2,f2,Uf2_Urez,m,Uf2s,'o',m,Uf2_Urezs,'o')
+plot(f2,Uf2,'o',f2,Uf2_Urez,'x',m,Uf2s,m,Uf2_Urezs)
+legend('U(f)','U(f)/Urez')
 h3 = xlabel('$f,Hz$')
 set(h3,'Interpreter','latex')
 h4 = ylabel('$U,V$')
 set(h4,'Interpreter','latex')
 ylim([0 1]);
-
+figure(3)
+plot(f1,Uf1_Urez,'o',n,Uf1_Urezs,f2,Uf2_Urez,'x',m,Uf2_Urezs)
+h5 = xlabel('$f,Hz$')
+set(h5,'Interpreter','latex')
+h6 = ylabel('$U,V$')
+set(h6,'Interpreter','latex')
+ylim([0 1.1])
+legend('U(f)/Urez R1','U(f)/Urez R2')
 
 
