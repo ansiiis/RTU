@@ -1,0 +1,141 @@
+%% 7.lekcija
+% Datu Interpol?cija
+% Pie?emsim ka mums ir doti sekojo?ie dati
+Udk = [2 1.85 1.48 1 0];
+Idk = [21.2 10 1.7 0.3 0]*1e-3;
+% interp1()
+% pie?emsim ka ir j?atrod I-? pie U = 0.5
+% y_kas_jaaatrod = interp1(x,y,x_pie_kura_jaatrod,metode)
+I = interp1(Udk,Idk,0.5,'linear')
+%%
+(0.3-0)*1e-3/(1-0)*(0.5-0)+0*1e-3
+I = interp1(Udk,Idk,0.5,'spline')
+%%
+I = interp1(Udk,Idk,0.5,'pchip')
+%%
+I = interp1(Udk,Idk,0.5,'nearest')
+%%
+I = interp1(Udk,Idk,0.5,'next')
+%%
+I = interp1(Udk,Idk,0.5,'previous')
+%%
+%% Line?r? interpol?cija
+UU = 0:0.01:2;
+II = interp1(Udk,Idk,UU,'linear');
+h = plot(Udk,Idk,'o',UU,II,'g');set(h,'LineWidth',5)
+%% Splainu interpol?cija
+II = interp1(Udk,Idk,UU,'spline');
+h = plot(Udk,Idk,'o',UU,II,'g');set(h,'LineWidth',5)
+I = interp1(Udk,Idk,0.5,'spline')
+I = interp1(Udk,Idk,0.5,'linear')
+hold on
+II = interp1(Udk,Idk,UU,'linear');
+h = plot(Udk,Idk,'o',UU,II,'r:');set(h,'LineWidth',3)
+%% INterpol?cija ar pchip
+II = interp1(Udk,Idk,UU,'pchip');
+h = plot(Udk,Idk,'o',UU,II,'c-');set(h,'LineWidth',3)
+I = interp1(Udk,Idk,0.5,'pchip')
+hold off
+%% Tuv?k? punkta interpol?cija (noapa?o?ana)
+I = interp1(Udk,Idk,0.5,'nearest')
+%%
+II = interp1(Udk,Idk,UU,'nearest');
+h = plot(Udk,Idk,'o',UU,II,'g');set(h,'LineWidth',5)
+I = interp1(Udk,Idk,0.4,'nearest')
+%% Interpol?cija uz priek?u (noapa?o?a uz priek?u)
+I = interp1(Udk,Idk,0.4,'next')
+%%
+I = interp1(Udk,Idk,0.1,'next')
+%%
+I = interp1(Udk,Idk,0,'next')
+%%
+II = interp1(Udk,Idk,UU,'next');
+h = plot(Udk,Idk,'o',UU,II,'g');set(h,'LineWidth',5)
+%% Intepol?cija atpaka? (noapa?o?ana atmetot )
+I = interp1(Udk,Idk,0.5,'previous')
+II = interp1(Udk,Idk,UU,'previous');
+h = plot(Udk,Idk,'o',UU,II,'g');set(h,'LineWidth',5)
+%% Datu filtr?cija
+a = 2>5
+%%
+class(a)
+%%
+a = 2<5
+%%
+a = 2==5
+%%
+%% Rezult?ts ir lo?iskais main?gais kas var b?t
+%% 0 vai 1, kas noz?m? nepaties?ba vai paties?ba
+whos a
+%%
+b = 3
+%%
+whos b
+%%
+%% Piem?rs ar vektoriem
+t = 0:7%ja ?in? pieraksta nav solis, tad tas ir 1
+%%
+tf = t>3
+%% Kas ir datu filtr?cija
+t(tf)
+%% tas ir viss, skat?simies piem?rus
+%% 1.piem?rs - sinuso?da (izfiltr?sim v?rt?bas kas ir
+% liek?las par 0
+t = 0:0.01:1;
+y = sin(2*pi*5*t);
+plot(t,y)
+%% izmantosim datu filtr?ciju lai uzz?m?tu tikai da?u kas
+% ir liel?ka par 0
+yf = y>0;
+figure,plot(t,yf)
+% tai da?ai kas ir maz?ka par 0 pie??irsim y=0
+% y(yf) tas b?s da?a no sin kas ir liel?k? par 0
+% y(~yf) tas b?s da?a no sin kas ir maz?ka par 0
+y(~yf)=0;
+figure,plot(t,y)
+ylim([-1 1])
+%% Piem?rs 2 (3D sf?ra)
+%% izgriez?sim no  sf?ras ???lumus
+% * sferas konstru??ana
+% sf?ru aprasksta ar x^2+y^2+z^2=R^2
+R=1;
+x=-1:0.01:1;
+y = -1:0.01:1;
+z = sqrt(R^2-(x.^2+y.^2));
+plot3(x,y,z)
+%% nesan?ca jo x un y nav neakar?gi
+x = -1:0.5:1;
+y = -1:0.5:1;
+[X,Y] = meshgrid(x,y)
+x = -1:0.01:1;
+y = -1:0.01:1;
+[X,Y] = meshgrid(x,y);
+Z = sqrt(R^2-(X.^2+Y.^2));
+mesh(X,Y,abs(Z))
+%%
+mesh(X,Y,real(Z))
+%%
+% izn?ca sf?ra ar pamatni
+% pamatnei z = 0
+% izmantosim datu filtr?ciju un atfiltr?sim
+% elementus kuriem z==0
+ind = (real(Z)==0);
+0/0
+% plot funkcija NaN nez?m?s
+Z(ind)=NaN;
+mesh(X,Y,Z)
+%%
+Z2 = Z;
+% pa?emsim ??ersgriezumu z >5 un z<6
+% pa?emsim ??ersgriezumu z >0.5 un z<0.6
+ind2 = (Z>0.5)&(Z<0.6);
+Z2(ind)=NaN;
+mesh(X,Y,Z2)
+%%
+Z2(ind2)=NaN;
+mesh(X,Y,Z2)
+Z2 = Z;
+%%
+Z2(~ind2)=NaN;
+figure,mesh(X,Y,Z2)
+zlim([0 1])
