@@ -1,5 +1,5 @@
 function y = lab_darb_3(t);
-t = 0:0.01:7.5;
+%ct = 0:0.01:7.5;
 
 t_sin_f = (t>=0)&(t<1.5);
 t_sin = t(t_sin_f);
