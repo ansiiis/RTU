@@ -12,3 +12,35 @@ h = (t(end)-t(1))/(N-1);
 xvid3c = 1/(N-1) * sum(sig(t(1:end-1)+h/2))
 %* ar formulu 4
 xvid4 = 1/(N-1)* ((sig(t(1)) + sig(t(end)))/2 + sum(sig(t(2:end-1))))
+%% īstās vidējās vērtības aprēķins
+% * sinusoīda
+syms t_sin
+A0 = 0; A = 3; T = (1.5)/8; f = 1/T; delay = 1;
+y_sin = A0+A*sin(2*pi*f*(t_sin-delay));
+int_sin = int(y_sin,t_sin,0,1.5)
+% * saw
+syms t_saw
+yA = 0; yB = 0.375; tA = 4.5; tB = 6; delay = 4.5;
+k = (yA-yB)/(tA-tB);
+y_saw = k*(t_saw-delay);
+int_saw = int(y_saw,t_saw,4.5,6)
+% * const
+syms t_const
+y_const =-3;
+int_const = int(y_const,t_const,3.5,4.5)
+%%
+% Liekam visu kopā
+ista_vv = double(1/7.5*(int_const+int_saw+int_sin))
+
+%% Salīdzināsim 3a ar īsto vv
+dt = [1 0.1 0.01 0.001]; % laika solis
+xvid3am = [];
+for dtc = dt
+    t = 0:dtc:7.5;
+    N = length(t); 
+    xvid3a = 1/(N-1) * sum(sig(t(1:end-1)));
+    xvid3am = [xvid3am,xvid3a];
+end
+semilogx(dt,xvid3am,'-o',dt,dt*0+ista_vv)
+
+
