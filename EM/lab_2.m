@@ -9,6 +9,12 @@ f = [85.711 85.711]*1e3;
 lambda = 1./n .* log(Um0./Umnt);
 Q = pi./lambda;
 
+L = 2.28e-3;
+C = 1670e-12;
+dL= 2.28e-4;
+dC = 1670e-13;
+f = 1/(4*pi) * sqrt(dC^2/(C^3*L) + dL^2/(L^3*C))
+f = 1/2 * sqrt((dC/C)^2+(dL/L)^2)
 %% 2. Tabula
 % R=12k
 f1rez=81e3;
