@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+<!-- :syntax sync fromstart -->
+	<head>
+		<script src="gojs/release/go-debug.js"></script>
+
+		<script>
+			function init() {
+
+				var $ = go.GraphObject.make;
+				myDiagram = $(go.Diagram, "myDiagramDiv",
+					{
+						//layout: $(go.GridLayout)
+						layout: $(go.CircularLayout)
+					});
+
+				
+				var node1 =
+					$(go.Node, "Auto", 
+						 //{ isLayoutPositioned: false },
+						 $(go.Shape, { figure: "RoundedRectangle", fill: "lightblue" }),
+						 $(go.TextBlock, { text: "Teacher", margin: 5 })
+				 );
+				myDiagram.add(node1);
+				
+				
+
+				// Izveidojam nodes
+				var nodeDataArray = [
+					//{ key: "Teacher", color: "olive", fig: "square", loc: "500 500",}
+				];
+
+				var i;
+				for (i=0; i<10; i++) {
+					nodeDataArray.push({ key: i, color: "lightblue" })
+				}
+
+
+				// Izveidojam linkus
+				var linkDataArray = [];
+				for (i=0; i<10; i++) {
+					linkDataArray.push({from: i, to: "Teacher"})
+				}
+				
+				for (i=0; i<10; i++) {
+					for (j=1; j<5; j++) {
+						linkDataArray.push({from: i, to: j})
+					}
+				}
+				
+				
+
+
+				//  Paradam savu diagramu
+				myDiagram.model = new go.GraphLinksModel(nodeDataArray, linkDataArray,);
+
+				// Izveidojam sablonu savai nodei
+				myDiagram.nodeTemplate = $(go.Node,"Auto",
+					new go.Binding("position", "loc", go.Point.parse).makeTwoWay(go.Point.stringify),
+					$(go.Shape, "Circle", {fill: "white"},
+						{toLinkableSelfNode: false,
+						 toLinkableDuplicates: false,},
+						new go.Binding("fill", "color"),
+						new go.Binding("figure", "fig"),
+					),
+					$(go.TextBlock, "text", {margin : 10},
+						new go.Binding("text", "key")
+					)
+				);
+
+				//Izveidojam sablonu savam linkam
+				myDiagram.linkTemplate = 
+					$(go.Link,
+						{ layerName: "Background"  
+						},
+						$(go.Shape, { strokeWidth: 3}, 
+							{ fromLinkableDuplicates: false, toLinkableDuplicates: false, toMaxLinks: 1 },
+							new go.Binding("stroke", "color")
+						),
+						$(go.Shape, { toArrow: "Standard", stroke: null},
+							new go.Binding("fill", "color")
+						)
+					);
+
+	
+			}
+		</script>
+
+	</head>
+	<body onload="init()">
+		<div id="myDiagramDiv" style="width:1920px; height: 1080px; border: 2px solid black;"></div>
+	</body>
+</html>
