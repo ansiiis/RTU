@@ -6,15 +6,15 @@ g32=1/(R2+R3);
 g46=1/(R4+R6);
 
 g = [g1+g32+g46];
-I = [g1*Ux+g32*U1-g46*U2];
+I = [g1*Ux-g32*U1+g46*U2];
 
 fi = g\I;
 
-I4 = (fi + U2)*g46;
-I3 = (fi - U1)*g32;
+I4 = (-fi+U2)*g46;
+I3 = (fi+U1)*g32;
 fim = I3*R2;
-fin = fi - I4*R4;
-Umn = fin - fim
+fin = fi + I4*R4;
+Umn = -fin + fim;
 R14 = R1+R4;
 R143 = R14*R3/(R14+R3);
 R1432 = R143*R2/(R143+R2);
