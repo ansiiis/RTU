@@ -15,7 +15,8 @@ I5 = Ik(3);
 I6 = Ik(2);
 
 %% Vien
-
+syms g1 g2 g3 g4 g5 g6 fi1 fi2 fi3
+eq1 = fi1*0 + fi2*(g2+g4+g5
 %% MSM
 R1=8e3; R2=6e3; R3=7e3; R4=5e3; R5=4e3; R6=2e3;
 U = 15; UR6 = 30;
