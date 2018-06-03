@@ -24,6 +24,25 @@ UR3 = R3*I3;
 UC3 = Zc3*I3;
 
 Uv = [UR1 UR2 UR3 UL1 UL2 UC1 UC3];
-abs(Uv)
-angle(Uv)
+modulis = abs(Uv);
+faze = angle(Uv);
+
+Iv = [I1 I2 I3];
+modulisi = abs(Iv);
+gradii = radtodeg(angle(Iv));
+figure
+hold on
+plot ([-30, 30], [0,0]) %draw vertical line
+plot ([0,0], [-30, 30]) %draw horizontal line
+grid on
+xlabel('Realā ass')
+ylabel('Imaginārā ass')
+title('Spriegumu fazori')
+
+for k=1:7
+   arrow( [ 0 0 ], [ real(Uv(k)) imag(Uv(k)) ] ) 
+   str = num2str(k);
+   text(real(Uv(k)-1),imag(Uv(k)+3*i), str)
+   text(real(Uv(k)-2.2),imag(Uv(k)+3*i), 'U')
+end
 
