@@ -18,25 +18,38 @@ UR  = I2*R;
 UR1 = I2*R1;
 Uc = I3*Zc;
 
-Uv = [UR0 UR UR1 Uc Us];
+Uv = [UR0 UR UR1 Uc 0.9 4.49 51e-3];
 I = [I1 I2 I3];
+
 
 figure
 hold on
-plot ([-2.5, 2.5], [0,0]) %draw vertical line
-plot ([0,0], [-2.5,2.5]) %draw horizontal line
+x=10;
+plot ([-x, x], [0,0]) %draw vertical line
+plot ([0,0], [-x,x]) %draw horizontal line
 grid on
 xlabel('Realā ass')
 ylabel('Imaginārā ass')
 title('Spriegumu fazori')
-
-for k=1:5
-   arrow( [ 0 0 ], [ real(Uv(k)) imag(Uv(k)) ] ) 
-   str = num2str(k);
-   %text(real(Uv(k)-1),imag(Uv(k)+3*i), str)
-   %text(real(Uv(k)-2.2),imag(Uv(k)+3*i), 'U')
+Unam = {'UR0','UR','UR1','UCm','UR0e','URe','UR1e'};
+color = ['b','b','b','b','r','r','r','r','r','r'];
+n=0; m=0;
+for k=1:4
+   arrow( [ n m ], [ real(Uv(k))+n imag(Uv(k))+m ], 'color', color(k) ) 
+   str = Unam(k);
+   n=n+real(Uv(k));
+   m=m+imag(Uv(k));
+   text(real(Uv(k)+n),imag(Uv(k)+m), str)
 end
-
+n=0; m=0;
+for k=5:7
+   arrow( [ n m ], [ real(Uv(k))+n imag(Uv(k))+m ], 'color', color(k) ) 
+   str = Unam(k);
+   n=n+real(Uv(k));
+   m=m+imag(Uv(k));
+   text(real(Uv(k)+n),imag(Uv(k)+m), str)
+end
+%%
 figure(2)
 hold on
 plot ([-0.001, 0.001], [0,0]) %draw vertical line

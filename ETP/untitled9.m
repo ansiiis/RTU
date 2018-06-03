@@ -33,13 +33,13 @@ arrow( [ 0 0 ], [ 5 0 ], 'color', color(4) )
 text(4.5,1,'Us')
 text(sqrt(12.05), -sqrt(12.05),'UCe')
 
-figure(2)
+figure
 x=5e-4;
 figure
 hold on
+grid on
 plot ([-x, x], [0,0]) %draw vertical line
 plot ([0,0], [-x,x]) %draw horizontal line
-grid on
 xlabel('Realā ass')
 ylabel('Imaginārā ass')
 title('Strāvas fazori')
