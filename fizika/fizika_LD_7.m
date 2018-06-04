@@ -6,10 +6,13 @@ s4 = [5 5 5 5 5]*1e-2;
 s5 = [5.5 5 5.5 5.5 5.5]*1e-2;
 ml = 13.8e-3; mr = 137.2e-3; l=0.765;
 g=9.81;
+mean = [mean(s1) mean(s2) mean(s3) mean(s4) mean(s5)]
 h=[7 17.5 27 37 47]*1e-2;
 for i=1:1:5
-    vl(i)=(1+(mr/ml))*meanv(i)*sqrt(g/l);
-    m(i)=sqrt(10/8*g*h);
+    vl(i)=(1+(mr/ml))*mean(i)*sqrt(g/l);
+    %
+    m(i)=sqrt(10/7*g*h(i));
+    %n(i)=sqrt(2*g*h(i));
 end
-
+plot(h,vl,h,m)
 
