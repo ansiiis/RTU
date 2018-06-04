@@ -1,0 +1,29 @@
+L1 = 4e-3; C1=10e-6; C2=20e-6; R1=20; R2=10; R3 = 5;
+
+Us1=200*exp(pi/2); Is = 500*exp(0)*1e-3;
+
+omega = 10e4;
+Zl1 = L1*omega*j;
+Zc1 = 1/(C1*omega*j);
+Zc2 = 1/(C2*omega*j);
+
+r = [R2+R3+Zc2-5];
+u = [-5*Is+Us1];
+i = r\u;
+
+%%
+L1 = 4e-3; C1=10e-6; C2=20e-6; R1=20; R2=10; R3 = 5;
+
+Us1=200*exp(pi/2); Is = 500*exp(0)*1e-3;
+
+omega = 10e4;
+Zl1 = L1*omega*j;
+Zc1 = 1/(C1*omega*j);
+Zc2 = 1/(C2*omega*j);
+g11 = 1/(R1+Zl1);
+g2 = 1/R2;
+g33 = 1/(R3+Zc2);
+
+g = [g11+g2+g3];
+
+i = [-Is+Us1+5*];
