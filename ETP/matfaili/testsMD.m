@@ -17,16 +17,14 @@ L1 = 4e-3; C1=10e-6; C2=20e-6; R1=20; R2=10; R3 = 5;
 Us1=200*exp(pi/2); Is = 500*exp(0)*1e-3;
 
 omega = 10e4;
-Zl1 = L1*omega*j;
-Zc1 = 1/(C1*omega*j);
-Zc2 = 1/(C2*omega*j);
+Zl1 = L1*omega*i;
+Zc1 = 1/(C1*omega*i);
+Zc2 = 1/(C2*omega*i);
 g11 = 1/(R1+Zl1);
 g2 = 1/R2;
 g33 = 1/(R3+Zc2);
 
-g = [-g2+4*g33-g11];
+g  = [-g2+4*g33-g11];
+Ik = [-4*Is+5*Us1];
 
-i = [-4*Is+5*Us1];
-
-u = g\i;
-(-fi-Us1)*g33;
+u = g\Ik;
