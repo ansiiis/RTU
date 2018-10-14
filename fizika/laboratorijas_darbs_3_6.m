@@ -75,7 +75,7 @@ r=[10 14 18 22 26 30 34 38]*1e-2;
 
 fi = 1./r.^2;
 
-U=100:-0.01:6.9252;
+U=100:-0.01:0;
 
 x1 = polyfit(fi,I1,1);
 y1 = polyval(x1,U);
@@ -92,4 +92,15 @@ set(h2,'Interpreter','latex')
 h = legend(['$U=30 V$'],['$U=30 V$ aproksimacija'],['$U=40 V$'],['$U=40 V$ aproksimacija'],['$U=50 V$'],['$U=50 V$ aproksimacija']);
 set(h,'Interpreter','latex')
 title('Apgaismojuma raksturlīkne')
+%%
+I1=[68 48 36 25 20 18 16 14]*1e-6;
+I2=[76 52 40 27 22 20 16 14]*1e-6;
+I3=[80 54 42 28 24 21 18 14]*1e-6;
+r=[10 14 18 22 26 30 34 38]*1e-2;
+
+fi = 1./r.^2;
+
+ks1=I1./fi;
+ks2=I2./fi;
+ks3=I3./fi;
 
