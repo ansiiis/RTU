@@ -33,7 +33,7 @@ set(h1,'Interpreter','latex')
 set(h2,'Interpreter','latex')
  
 title('Voltampēra raksturlīkne pie 3 attālumiem')
-h = legend(['$r=0.03,m$'],['$r=0.03,m$ aproksimacija'],['$r=0.1,m$'],['$r=0.1,m$ aproksimacija'],['$r=0.45m$'],['$r=0.45m$ aproksimacija']);
+h = legend(['$r=0.03,m$'],['$r=0.03,m$ aproksimacija'],['$r=0.1,m$'],['$r=0.1,m$ aproksimacija'],['$r=0.2m$'],['$r=0.2m$ aproksimacija']);
 set(h,'Interpreter','latex')
 ylim([0 2.1e-4])
 
