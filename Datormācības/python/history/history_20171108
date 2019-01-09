@@ -1,0 +1,244 @@
+    1  VirtualBox --startvm XP
+    2  firefox&
+    3  ls
+    4  vim hello.py 
+    5  ls
+    6  cd DMI_local/
+    7  ls
+    8  cd python
+    9  ls
+   10  vim syntax
+   11  ls
+   12  rm -rf syntax 
+   13  ls
+   14  cd DMi
+   15  cd DMI_local/
+   16  ls
+   17  git clone https://github.com/ansiiis/DMI_local
+   18  ls
+   19  cd DMI_local/
+   20  ls
+   21  vim basic-shell-operators 
+   22  ls
+   23  mkdir shell
+   24  mv basic-shell-operators shell
+   25  ls
+   26  mv history/ history-shell
+   27  ls
+   28  mv history-shell/ shell
+   29  ls
+   30  mkdir python
+   31  ls\
+   32  ls
+   33  cd python/
+   34  ls
+   35  cd ..
+   36  ls
+   37  git-upload 2017118_8_40
+   38  ./git-upload 2017118_8_40
+   39  ls
+   40  cd python/
+   41  ls
+   42  vim hello.py
+   43  ./hello.py
+   44  chmod 744
+   45  chmod 744 hello.py 
+   46  ./hello.py
+   47  vim hello.py
+   48  ./hello.py
+   49  vim hello.py
+   50  ./hello.py
+   51  vim hello.py
+   52  ./hello.py
+   53  vim hello.py
+   54  ./hello.py
+   55  vim hello.py
+   56  ./hello.py
+   57  vim hello.py
+   58  ./hello.py
+   59  vim hello.py
+   60  ./hello.py
+   61  vim hello.py
+   62  ./hello.py
+   63  vim hello.py
+   64  ./hello.py
+   65  vim hello.py
+   66  ./hello.py
+   67  vim hello.py
+   68  ./hello.py
+   69  vim hello.py
+   70  ./hello.py
+   71  vim hello.py
+   72  ./hello.py
+   73  vim hello.py
+   74  ./hello.py
+   75  vim hello.py
+   76  ./hello.py
+   77  vim hello.py
+   78  nano hello.py
+   79  vim test
+   80  .test
+   81  ls
+   82  chmod 744 test
+   83  ./test
+   84  ./hello.py
+   85  ls
+   86  rm -rf test
+   87  vim hello.py
+   88  ./hello.py
+   89  vim hello.py
+   90  ./hello.py
+   91  vim hello.py
+   92  ./hello.py
+   93  vim hello.py
+   94  ./hello.py
+   95  vim hello.py
+   96  ./hello.py
+   97  vim hello.py
+   98  ./hello.py
+   99  vim hello.py
+  100  ./hello.py
+  101  vim hello.py
+  102  ./hello.py
+  103  vim hello.py
+  104  ./hello.py
+  105  vim hello.py
+  106  ./hello.py
+  107  vim hello.py
+  108  ./hello.py
+  109  vim hello.py
+  110  vim variables.py
+  111  ./variables.py
+  112  chmod 744 variables.py 
+  113  ./variables.py
+  114  vim variables.py
+  115  ./variables.py
+  116  vim variables.py
+  117  ./variables.py
+  118  vim variables.py
+  119  ./variables.py
+  120  vim variables.py
+  121  ./variables.py
+  122  vim variables.py
+  123  ./variables.py
+  124  vim variables.py
+  125  ./variables.py
+  126  vim variables.py
+  127  ./variables.py
+  128  vim variables.py
+  129  ./variables.py
+  130  vim variables.py
+  131  ./variables.py
+  132  vim variables.py
+  133  ./variables.py
+  134  vim variables.py
+  135  ./variables.py
+  136  vim variables.py
+  137  ./variables.py
+  138  vim variables.py
+  139  ./variables.py
+  140  vim variables.py
+  141  ./variables.py
+  142  vim variables.py
+  143  ./variables.py
+  144  vim variables.py
+  145  ./variables.py
+  146  vim variables.py
+  147  ./variables.py
+  148  vim variables.py
+  149  ./variables.py
+  150  vim variables.py
+  151  ./variables.py
+  152  vim variables.py
+  153  ./variables.py
+  154  vim variables.py
+  155  ./variables.py
+  156  vim variables.py
+  157  ./variables.py
+  158  vim variables.py
+  159  ./variables.py
+  160  vim variables.py
+  161  ./variables.py
+  162  vim variables.py
+  163  ls
+  164  vim dialog.py
+  165  chmod 744 dialog.py 
+  166  ./dialog.py 
+  167  chmod 744 dialog.py 
+  168  vim dialog.py
+  169  vim dialog.py
+  170  ./dialog.py 
+  171  vim dialog.py
+  172  ./dialog.py 
+  173  vim dialog.py
+  174  ./dialog.py 
+  175  vim dialog.py
+  176  ./dialog.py 
+  177  vim dialog.py
+  178  ./dialog.py 
+  179  vim dialog.py
+  180  ./dialog.py 
+  181  vim dialog.py
+  182  ./dialog.py 
+  183  vim dialog.py
+  184  ./dialog.py 
+  185  vim dialog.py
+  186  ./dialog.py 
+  187  vim dialog.py
+  188  ./dialog.py 
+  189  vim dialog.py
+  190  ./dialog.py 
+  191  vim dialog.py
+  192  ./dialog.py 
+  193  vim dialog.py
+  194  ./dialog.py 
+  195  vim dialog.py
+  196  ls
+  197  vim if
+  198  ls
+  199  mv if if.sh
+  200  ls
+  201  chmod 744 if.sh
+  202  vim if.sh 
+  203  ./if.sh
+  204  vim if.sh 
+  205  ./if.sh
+  206  vim if.sh 
+  207  ./if.sh
+  208  vim if.sh 
+  209  ./if.sh
+  210  vim if.sh 
+  211  ./if.sh
+  212  vim if.sh 
+  213  ls
+  214  idle &
+  215  firefox &
+  216  ls
+  217  cd DMI_local/
+  218  ls
+  219  cd python/
+  220  ļs
+  221  ls
+  222  vim if.sh 
+  223  ./if.sh
+  224  vim if.sh 
+  225  ./if.sh
+  226  vim if.sh 
+  227  ./if.sh
+  228  vim if.sh 
+  229  ./if.sh
+  230  vim while
+  231  mv while while.sh
+  232  chmod 744 while.sh 
+  233  ./while.sh
+  234  chmod 744 while.sh 
+  235  vim while.sh
+  236  cd ..
+  237  ls
+  238  cd python
+  239  mkdir history
+  240  ls
+  241  cd history
+  242  lss
+  243  ls
+  244  history > history_20171108

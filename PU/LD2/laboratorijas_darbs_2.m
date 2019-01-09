@@ -44,11 +44,10 @@ Uke = [0.35 1 2 3 4 5 6 8 10 12];
 Ik = [2.62 2.68 2.74 2.78 2.81 2.85 2.9 2.97 3.05 3.17]*1e-3;
 
 n=0.35:0.001:12;
+hold on
+Iks=spline(Uke,Ik,n)
 
-x1=polyfit(Uke,Ik,1);
-y1=polyval(x1,n);
-
-plot(Uke,Ik,'o',n,y1)
+plot(Uke,Ik,'o',n,Iks)
 
 h1 = ylabel('Strava$,A$');
 h2 = xlabel('Spriegums$,V$');
@@ -63,9 +62,10 @@ Uke = [0.35 1 2 3 4 5 6 8 10 12];
 Ik = [13.6 15.13 15.6 15.9 16.3 16.93 17.24 18.13 19.14 19.64]*1e-3;
 
 n=0.35:0.001:12;
-x1=polyfit(Uke,Ik,1);
-y1=polyval(x1,n);
-plot(Uke,Ik,'o',n,y1)
+hold on
+Iks=spline(Uke,Ik,n)
+
+plot(Uke,Ik,'o',n,Iks)
 
 h1 = ylabel('Strava$,A$');
 h2 = xlabel('Spriegums$,V$');
@@ -80,16 +80,16 @@ Uke = [0.35 1 2 3 4 5 6 8 10 12];
 Ik= [22.15 29.1 30.5 31.8 32.95 34.2 35.4 37.6 40.38 42.7]*1e-3;
 
 n=0.35:0.001:12;
-x1=polyfit(Uke,Ik,1);
-y1=polyval(x1,n);
-plot(Uke,Ik,'o',n,y1)
+hold on
+Iks=spline(Uke,Ik,n)
 
+plot(Uke,Ik,'o',n,Iks)
 h1 = ylabel('Strava$,A$');
 h2 = xlabel('Spriegums$,V$');
 
 set(h1,'Interpreter','latex')
 set(h2,'Interpreter','latex')
-h3= title('Tranzistora izejas raksturlīkne pie Ib = 100 microA ')
+h3= title('Tranzistora izejas raksturlīkne pie Ib = 100,50,10 microA ')
 
 %% Ib, Ik
 

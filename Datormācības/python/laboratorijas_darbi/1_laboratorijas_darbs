@@ -1,0 +1,32 @@
+#!/usr/bin/python
+#-*- coding: utf-8 -*-
+
+# Ziņa pasniedzējam.
+print("Darbs veikts Python 3.0")
+
+# Sasveicināmies un iegūstam datus!
+print("Programma izveidos dalījumu tabulu jūsu izvēlētam skaitlim un nākamajiem desmit skaitļiem!")
+a=eval(input("Lietotāj, ievadiet skaitli!\n"))
+print("Jūs ievadījāt skaitli {}, kura datu tips ir {}!".format(a,type(a)))
+
+# Izveidojam tabulas nosaukumu un aprakstošos lielumus!
+print()
+print("{}".format((len(str('{:.2f}'.format(a))))*' '+2*' '),end='')
+m=1
+for i in range(10):
+    print(m,end='%       ')
+    m=m+1
+print()
+
+# Izveidosim dalījumu tabulu ar 2 ciklu palīdzību.
+import numpy as np
+x=np.arange(a,a+10)
+maxi=np.amax(x)
+for i in range(10):
+    print("{:{width}.2f}".format(a,width=(len(str('{:.2f}'.format(maxi))))),end=' ')
+    n=1
+    for i in range(10):
+        print("{:.2f}".format(a%n),end='     ')
+        n=n+1
+    a=a+1
+    print()
