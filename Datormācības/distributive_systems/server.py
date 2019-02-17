@@ -32,7 +32,7 @@ def handle_client(client):  # Takes client socket as argument.
             client.send(bytes("{aizvērt}", "utf8"))
             client.close()
             del clients[client]
-            broadcast(bytes("%s ir pametis šo pasauli." % name, "utf8"))
+            broadcast(bytes("%s ir pametis šo čatu." % name, "utf8"))
             break
 
 
