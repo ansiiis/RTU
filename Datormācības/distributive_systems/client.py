@@ -30,30 +30,41 @@ def on_closing(event=None):
     my_msg.set("{aizvērt}")
     send()
 
-top = tkinter.Tk()
-top.title("MansČats")
+window = tkinter.Tk()
+window.title("MansČats")
+#window.geometry("1080x1920")
 
-messages_frame = tkinter.Frame(top)
+my_color='#f5f5dc'
+
+messages_frame = tkinter.Frame(window)
 my_msg = tkinter.StringVar()  # For the messages to be sent.
-my_msg.set("Ieraksti šeit savu vārdu.")
+my_msg.set("")
+
 scrollbar = tkinter.Scrollbar(messages_frame)  # To navigate through past messages.
+
 # Following will contain the messages.
-msg_list = tkinter.Listbox(messages_frame, height=15, width=50, yscrollcommand=scrollbar.set)
+msg_list = tkinter.Listbox(messages_frame, height=30, width=70,
+                           yscrollcommand=scrollbar.set, bg=my_color)
 scrollbar.pack(side=tkinter.RIGHT, fill=tkinter.Y)
 msg_list.pack(side=tkinter.LEFT, fill=tkinter.BOTH)
 msg_list.pack()
 messages_frame.pack()
 
-entry_field = tkinter.Entry(top, textvariable=my_msg)
+entry_field = tkinter.Entry(window, textvariable=my_msg, bg=my_color)
 entry_field.bind("<Return>", send)
 entry_field.pack()
-send_button = tkinter.Button(top, text="Sūtīt", command=send)
+send_button = tkinter.Button(window, text="Sūtīt", command=send)
 send_button.pack()
 
-top.protocol("WM_DELETE_WINDOW", on_closing)
+window.protocol("WM_DELETE_WINDOW", on_closing)
 
 #----Now comes the sockets part----
 HOST = input('Enter host: ')
+if not HOST:
+    HOST='127.0.0.1'
+else:
+    HOST = int(HOST)
+
 PORT = input('Enter port: ')
 if not PORT:
     PORT = 33000
