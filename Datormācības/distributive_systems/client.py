@@ -20,14 +20,14 @@ def send(event=None):  # event is passed by binders.
     msg = my_msg.get()
     my_msg.set("")  # Clears input field.
     client_socket.send(bytes(msg, "utf8"))
-    if msg == "{aizvērt}":
+    if msg == "{close}":
         client_socket.close()
         top.quit()
 
 
 def on_closing(event=None):
     """This function is to be called when the window is closed."""
-    my_msg.set("{aizvērt}")
+    my_msg.set("{close}")
     send()
 
 window = tkinter.Tk()
@@ -63,7 +63,7 @@ HOST = input('Enter host: ')
 if not HOST:
     HOST='127.0.0.1'
 else:
-    HOST = int(HOST)
+    HOST = str(HOST)
 
 PORT = input('Enter port: ')
 if not PORT:

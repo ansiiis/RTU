@@ -18,7 +18,7 @@ def handle_client(client):  # Takes client socket as argument.
     """Handles a single client connection."""
 
     name = client.recv(BUFSIZ).decode("utf8")
-    welcome = 'Sveicināts %s! Lai aizvērtu čatu, raksti {aizvērt} .' % name
+    welcome = 'Sveicināts %s! Lai aizvērtu čatu, raksti {close} .' % name
     client.send(bytes(welcome, "utf8"))
     msg = "%s has joined the chat!" % name
     broadcast(bytes(msg, "utf8"))
@@ -26,10 +26,10 @@ def handle_client(client):  # Takes client socket as argument.
 
     while True:
         msg = client.recv(BUFSIZ)
-        if msg != bytes("{aizvērt}", "utf8"):
+        if msg != bytes("{close}", "utf8"):
             broadcast(msg, name+": ")
         else:
-            client.send(bytes("{aizvērt}", "utf8"))
+            client.send(bytes("{close}", "utf8"))
             client.close()
             del clients[client]
             broadcast(bytes("%s ir pametis šo čatu." % name, "utf8"))
